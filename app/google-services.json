@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "454979715414",
+    "project_id": "miskysapplication",
+    "storage_bucket": "miskysapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454979715414:android:d5f1a32782d7ff5ed516f7",
+        "android_client_info": {
+          "package_name": "com.example.miskysapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtz0rX8uwbssGr0PS05ZyKQVzd9MuYzRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
