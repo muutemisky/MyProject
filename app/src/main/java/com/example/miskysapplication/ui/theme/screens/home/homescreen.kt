@@ -1,12 +1,15 @@
 package com.example.miskysapplication.ui.theme.screens.home
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,7 +22,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.miskysapplication.navigation.ROUTE_LOGIN
+import com.example.miskysapplication.navigation.ROUTE_ADD_Student
+
+//import com.example.miskysapplication.navigation.ROUTE_ABOUT
 
 @Composable
 fun HomeScreen(navController: NavController){
@@ -30,26 +35,24 @@ fun HomeScreen(navController: NavController){
         var context= LocalContext.current
         //  var productdata=productviewmodel(navController,context)
 
-        Text(text = "Choose Your Role",
+        Text(text = "STUDENT ATTENDANCE SYSTEM",
             color = Color.Black,
-            fontFamily = FontFamily.Serif,
+            fontFamily = FontFamily.SansSerif,
             fontSize = 30.sp)
         Spacer(modifier = Modifier.height(100.dp))
 
         Button(onClick = {
-             navController.navigate(ROUTE_LOGIN)
+             navController.navigate(ROUTE_ADD_Student)
         },modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Student")
+            Text(text = "Add Student")
         }
         Spacer(modifier = Modifier.height(100.dp))
 
         Button(onClick = {
-            //navController.navigate(ROUTE_VIEW_PRODUCT)
+            navController.navigate(ROUTE_ADD_Student)
         },modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Teacher")
+            Text(text = "View Student")
         }
-
-
 
 
     }

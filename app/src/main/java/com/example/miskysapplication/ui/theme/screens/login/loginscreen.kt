@@ -1,5 +1,5 @@
-package com.example.miskysapplication.ui.theme.screens.home.Register
-
+package com.example.miskysapplication.ui.theme.screens.login
+//import AuthViewModel
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -37,8 +37,11 @@ import androidx.navigation.compose.rememberNavController
 //import com.example.firebaseauth.data.AuthViewModel
 //import com.example.firebaseauth.navigation.ROUTE_HOME
 //import com.example.firebaseauth.navigation.ROUTE_REGISTER
-//import com.example.navigation.ROUTE_REGISTER
 import com.example.miskysapplication.navigation.ROUTE_REGISTER
+import com.example.miskysapplication.data.AuthViewModel
+import com.example.miskysapplication.navigation.ROUTE_HOME
+
+//import com.example.miskysapplication.navigation.ROUTE_REGISTER
 
 @Composable
 fun LoginScreen(navController: NavController){
@@ -47,12 +50,12 @@ fun LoginScreen(navController: NavController){
     var context= LocalContext.current
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(Color.Transparent),
+        .background(Color.Black),
         horizontalAlignment = Alignment.CenterHorizontally) {
 
-        Text(text = "Sign In as Teacher",
-            color = Color.Magenta,
-            fontFamily = FontFamily.Serif,
+        Text(text = "Login here",
+            color = Color.Cyan,
+            fontFamily = FontFamily.SansSerif,
             fontSize = 30.sp)
         Spacer(modifier = Modifier.height(20.dp))
 
@@ -76,19 +79,19 @@ fun LoginScreen(navController: NavController){
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
-//            val mylogin= AuthViewModel(navController,context)
-//            mylogin.login(email.text.trim(),pass.text.trim())
+            navController.navigate(ROUTE_HOME)
+            val mylogin= AuthViewModel(navController,context)
+            mylogin.login(email.text.trim(),pass.text.trim())
 
         }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "login In")
+            Text(text = "Log In")
         }
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(onClick = {
             navController.navigate(ROUTE_REGISTER)
         }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Are you a student? " +
-                    "Click here")
+            Text(text = "Don't have account? Click to Register")
         }
 
     }
@@ -99,3 +102,4 @@ fun LoginScreen(navController: NavController){
 fun LoginScreenPreview() {
     LoginScreen(rememberNavController())
 }
+
